@@ -6,9 +6,9 @@ import Image from "next/image"
 
 export default function Header() {
   return (
-    <header className="relative w-full mb-8">
+    <header className="relative w-full h-[81px] mb-8">
       <nav 
-        className="flex items-center justify-between bg-white rounded-[200px] w-full"
+        className="flex items-center  justify-between bg-white rounded-[200px] w-full"
         style={{
           paddingTop: '20px',
           paddingRight: '20px',

@@ -94,7 +94,16 @@ const config = {
         "separator": {
           DEFAULT: "var(--separator-color)",
         },
-      }
+      },
+      keyframes: {
+        "fade-out-fast": {
+          "0%": { opacity: "1" },
+          "100%": { opacity: "0", visibility: "hidden", pointerEvents: "none" },
+        },
+      },
+      animation: {
+        "fade-out-fast": "fade-out-fast 2.0s ease-out forwards",
+      },
     },
   },
   plugins: [require("tailwindcss-animate")],
