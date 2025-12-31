@@ -97,12 +97,13 @@ const config = {
       },
       keyframes: {
         "fade-out-fast": {
-          "0%": { opacity: "1" },
+          "0%": { opacity: "1", visibility: "visible" },
+          "30%": { opacity: "1", visibility: "visible" },
           "100%": { opacity: "0", visibility: "hidden", pointerEvents: "none" },
         },
       },
       animation: {
-        "fade-out-fast": "fade-out-fast 2.0s ease-out forwards",
+        "fade-out-fast": "fade-out-fast 2.5s ease-out forwards",
       },
     },
   },

@@ -6,19 +6,11 @@ import Image from "next/image"
 
 export default function HeroContent() {
   return (
-    <div className="relative z-10 flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 mt-[45px] gap-4 min-h-[600px]">
-      {/* Initial Screen Overlay - Fades out quickly */}
-      <div 
-        className="fixed inset-0 z-[100] animate-fade-out-fast pointer-events-none"
-        style={{
-          background: 'linear-gradient(0deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), linear-gradient(0deg, #007AFF, #007AFF)',
-        }}
-      />
-      
+    <div className="relative z-10 flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 gap-4">
       {/* Birds with Speech Bubbles - Positioned absolutely around content */}
       <div className="absolute inset-0 pointer-events-none z-0">
         {/* Left Most Bird */}
-        <div className="absolute left-[-5%] top-[20%] animate-float" style={{ animationDelay: "0s" }}>
+        <div className="absolute left-[-5%] top-[25%] animate-float" style={{ animationDelay: "0s" }}>
           <Image 
             src="/assets/left-most-bird.svg" 
             alt="Left most bird" 
@@ -29,7 +21,7 @@ export default function HeroContent() {
         </div>
 
         {/* Left Bird */}
-        <div className="absolute left-[5%] top-[60%] animate-floatSlow" style={{ animationDelay: "1s" }}>
+        <div className="absolute left-[10%] top-[40%] animate-floatSlow" style={{ animationDelay: "1s" }}>
           <Image 
             src="/assets/left-bird.svg" 
             alt="Left bird" 
@@ -51,7 +43,7 @@ export default function HeroContent() {
         </div>
 
         {/* Right Most Bird */}
-        <div className="absolute right-[-3%] top-[70%] animate-floatSlow" style={{ animationDelay: "3s" }}>
+        <div className="absolute right-[5%] top-[65%] animate-floatSlow" style={{ animationDelay: "3s" }}>
           <Image 
             src="/assets/right-most-bird.svg" 
             alt="Right most bird" 

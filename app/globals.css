@@ -112,6 +112,58 @@
     -moz-osx-font-smoothing: grayscale;
     overflow-y: auto;
   }
+  
+  /* Contact Sales Button Hover Effect */
+  .contact-sales-btn {
+    position: relative !important;
+    overflow: hidden !important;
+    background-color: #007AFF !important; /* Start Blue */
+    color: #FFFFFF !important; /* Start White */
+    border: none !important;
+    border-width: 0 !important;
+    outline: none !important;
+    box-shadow: none !important;
+    isolation: isolate; /* Creates a new stacking context */
+    --tw-ring-width: 0 !important;
+    --tw-ring-offset-width: 0 !important;
+    --tw-ring-color: transparent !important;
+  }
+  
+  .contact-sales-btn:focus,
+  .contact-sales-btn:focus-visible,
+  .contact-sales-btn:active {
+    outline: none !important;
+    box-shadow: none !important;
+    border: none !important;
+    border-width: 0 !important;
+    --tw-ring-width: 0 !important;
+    --tw-ring-offset-width: 0 !important;
+    --tw-ring-color: transparent !important;
+  }
+  
+  .contact-sales-btn::before {
+    content: '';
+    position: absolute;
+    inset: 0; /* Cover the whole button */
+    background: #FFFFFF;
+    z-index: -1; /* Move behind the text */
+    
+    /* Use transform instead of width for smoothness */
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 3.5s cubic-bezier(0.73, 0, 0.8, 0.83);
+    border-radius: inherit;
+  }
+  
+  .contact-sales-btn:hover::before {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+  
+  /* Target the button text directly */
+  .contact-sales-btn:hover {
+    color: #007AFF !important;
+  }
 }
 
 /* Custom Animations */
@@ -152,13 +204,38 @@
 }
 
 @keyframes fadeOutFast {
-  from {
+  0% {
     opacity: 1;
+    visibility: visible;
   }
-  to {
+  30% {
+    opacity: 1;
+    visibility: visible;
+  }
+  100% {
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
+  }
+}
+
+/* Button hover animation - background slides from right to left */
+@keyframes buttonHoverBg {
+  0% {
+    background-position: 100% 0;
+  }
+  100% {
+    background-position: 0% 0;
+  }
+}
+
+/* Button hover text color change - delayed */
+@keyframes buttonHoverText {
+  0%, 99% {
+    color: #FFFFFF;
+  }
+  100% {
+    color: #007AFF;
   }
 }
 

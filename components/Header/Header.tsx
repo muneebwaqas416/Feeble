@@ -40,9 +40,9 @@ export default function Header() {
 
           {/* Contact Sales Button */}
           <Button 
-            className="bg-button-primary-bg text-button-primary-text text-base font-medium leading-[120%] tracking-[-0.02em] rounded-[43.62px] py-[11px] px-[18px] gap-[6.98px] hover:opacity-90 transition-opacity"
+            className="contact-sales-btn bg-button-primary-bg text-white text-base font-medium leading-[120%] tracking-[-0.02em] rounded-[43.62px] py-[11px] px-[18px] gap-[6.98px] border-none transition-colors duration-500"
           >
-            Contact Sales
+            <span className="relative z-10">Contact Sales</span>
           </Button>
       </nav>
     </header>

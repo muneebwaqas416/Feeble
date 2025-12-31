@@ -9,6 +9,14 @@ import ScrollIndicator from "./ScrollIndicator"
 export default function Hero() {
   return (
     <section className="relative min-h-screen bg-sky overflow-hidden">
+      {/* Initial Screen Overlay - Shows first, then fades out - Covers entire page */}
+      <div 
+        className="fixed inset-0 z-[100] pointer-events-none animate-fade-out-fast"
+        style={{
+          background: 'linear-gradient(0deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), linear-gradient(0deg, #007AFF, #007AFF)',
+        }}
+      />
+      
       {/* Main Content Container - On top (z-50) */}
       <div 
         className="relative z-50 left-1/2 -translate-x-1/2 w-full max-w-[1680px] px-[120px]"
