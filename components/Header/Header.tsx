@@ -39,11 +39,13 @@ export default function Header() {
           </div>
 
           {/* Contact Sales Button */}
-          <Button 
-            className="contact-sales-btn bg-button-primary-bg text-white text-base font-medium leading-[120%] tracking-[-0.02em] rounded-[43.62px] py-[11px] px-[18px] gap-[6.98px] border-none transition-colors duration-500"
-          >
-            <span className="relative z-10">Contact Sales</span>
-          </Button>
+          <div className="contact-sales-wrapper">
+            <Button 
+              className="contact-sales-btn bg-button-primary-bg text-white text-base font-medium leading-[120%] tracking-[-0.02em] rounded-[43.62px] py-[11px] px-[18px] gap-[6.98px] border-none"
+            >
+              <span>Contact Sales</span>
+            </Button>
+          </div>
       </nav>
     </header>
   )

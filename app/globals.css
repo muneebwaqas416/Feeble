@@ -113,17 +113,36 @@
     overflow-y: auto;
   }
   
+  /* Container to handle the shadow since overflow:hidden kills it on the button */
+  .contact-sales-wrapper {
+    display: inline-block;
+    border-radius: 43.62px;
+    transition: box-shadow 0.3s ease;
+    /* Ensure wrapper can show shadow */
+    padding: 0;
+    margin: 0;
+  }
+  
+  .contact-sales-wrapper:hover {
+    /* Lighter black shadow on all sides - evenly distributed around the button */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15),
+                0 0 10px rgba(0, 0, 0, 0.1),
+                0 0 5px rgba(0, 0, 0, 0.08) !important;
+  }
+  
   /* Contact Sales Button Hover Effect */
   .contact-sales-btn {
     position: relative !important;
-    overflow: hidden !important;
-    background-color: #007AFF !important; /* Start Blue */
-    color: #FFFFFF !important; /* Start White */
+    overflow: hidden !important; /* Clips the internal animation */
+    background-color: #007AFF !important;
+    color: #FFFFFF !important;
     border: none !important;
     border-width: 0 !important;
+    border-style: none !important;
     outline: none !important;
     box-shadow: none !important;
-    isolation: isolate; /* Creates a new stacking context */
+    border-radius: 43.62px !important;
+    isolation: isolate;
     --tw-ring-width: 0 !important;
     --tw-ring-offset-width: 0 !important;
     --tw-ring-color: transparent !important;
@@ -144,25 +163,46 @@
   .contact-sales-btn::before {
     content: '';
     position: absolute;
-    inset: 0; /* Cover the whole button */
+    /* Much larger negative inset to completely prevent the "blue edge" artifact */
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
     background: #FFFFFF;
-    z-index: -1; /* Move behind the text */
+    /* Use much larger border-radius to ensure complete coverage beyond button edges */
+    border-radius: 48.62px !important;
     
-    /* Use transform instead of width for smoothness */
+    /* Explicitly remove all borders and outlines to prevent thin line */
+    border: none !important;
+    border-width: 0 !important;
+    border-style: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+    
+    /* Animation logic - keep origin on right for right-to-left animation */
     transform: scaleX(0);
     transform-origin: right;
-    transition: transform 3.5s cubic-bezier(0.73, 0, 0.8, 0.83);
-    border-radius: inherit;
+    transition: transform 1.75s cubic-bezier(0.73, 0, 0.8, 0.83);
+    z-index: 0; /* Place above blue bg but below text */
+    /* Use clip-path to ensure perfect clipping with larger inset */
+    clip-path: inset(-5px round 48.62px);
   }
   
   .contact-sales-btn:hover::before {
     transform: scaleX(1);
-    transform-origin: left;
+    transform-origin: right; /* Keep right to animate from right to left */
   }
   
-  /* Target the button text directly */
-  .contact-sales-btn:hover {
+  /* Force the text/span to change color when the button is hovered */
+  .contact-sales-btn:hover,
+  .contact-sales-btn:hover span {
     color: #007AFF !important;
+  }
+  
+  /* Ensure text stays on top */
+  .contact-sales-btn span {
+    position: relative;
+    z-index: 1;
   }
 }
 
