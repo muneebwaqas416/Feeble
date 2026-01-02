@@ -5,7 +5,7 @@ import Image from 'next/image'
 
 const Clouds = () => {
   return (
-    <div className="absolute bottom-0 left-0 w-full h-[1200px] overflow-hidden pointer-events-none z-0">
+    <div className="absolute bottom-0 left-0 w-full h-[1200px] sm:h-[1500px] md:h-[1800px] lg:h-[2000px] overflow-hidden pointer-events-none z-0">
       {/* CONTAINER: Sticks everything to the bottom */}
       <div className="absolute opacity-10 bottom-0 left-0 w-full leading-[0]">
         
@@ -15,8 +15,8 @@ const Clouds = () => {
             src="/assets/white-cloud.svg" 
             alt="White cloud layer" 
             width={1920} 
-            height={106}
-            className="w-full h-auto"
+            height={200}
+            className="w-full h-auto min-h-[150px] sm:min-h-[180px] md:min-h-[200px]"
             priority
           />
         </div>
@@ -27,8 +27,8 @@ const Clouds = () => {
             src="/assets/lightest-blue-cloud.svg" 
             alt="Lightest blue cloud layer" 
             width={1920} 
-            height={175}
-            className="w-full h-auto"
+            height={300}
+            className="w-full h-auto min-h-[200px] sm:min-h-[250px] md:min-h-[300px]"
             priority
           />
         </div>
@@ -39,8 +39,8 @@ const Clouds = () => {
             src="/assets/light-blue-cloud.svg" 
             alt="Light blue cloud layer" 
             width={1919} 
-            height={282}
-            className="w-full h-auto"
+            height={450}
+            className="w-full h-auto min-h-[350px] sm:min-h-[400px] md:min-h-[450px]"
             priority
           />
         </div>
@@ -51,8 +51,8 @@ const Clouds = () => {
             src="/assets/dark-blue-cloud.svg" 
             alt="Dark blue cloud layer" 
             width={1920} 
-            height={394}
-            className="w-full h-auto"
+            height={600}
+            className="w-full h-auto min-h-[450px] sm:min-h-[550px] md:min-h-[600px]"
             priority
           />
         </div>

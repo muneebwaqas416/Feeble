@@ -30,7 +30,7 @@ export default function Hero() {
       </div>
       
       {/* Clouds, Birds, and Scroll Indicator Section - 2rem gap from content */}
-      <div className="relative w-full" style={{ marginTop: '2rem', minHeight: '300px' }}>
+      <div className="relative  w-full" style={{ marginTop: '20rem', minHeight: '300px' }}>
         {/* Clouds - Background layers starting from bottom (z-0) */}
         <Clouds />
         

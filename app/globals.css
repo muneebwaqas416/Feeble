@@ -279,3 +279,66 @@
   }
 }
 
+/* Bird crossing animations - left to right and right to left */
+@keyframes birdCrossLeftToRight {
+  0% {
+    transform: translateX(-150%);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(calc(100vw + 150%));
+    opacity: 0;
+  }
+}
+
+@keyframes birdCrossRightToLeft {
+  0% {
+    transform: translateX(calc(100vw + 150%));
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-150%);
+    opacity: 0;
+  }
+}
+
+/* Bird fade-in from bottom with opacity increase */
+@keyframes birdFadeInFromBottom {
+  0% {
+    transform: translateY(250px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Bird fade in from bottom, then fade out when reaching position */
+@keyframes birdFadeInOutFromBottom {
+  0% {
+    transform: translateY(300px);
+    opacity: 0;
+  }
+  50% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+}
+

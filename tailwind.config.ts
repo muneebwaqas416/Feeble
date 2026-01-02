@@ -103,7 +103,7 @@ const config = {
         },
       },
       animation: {
-        "fade-out-fast": "fade-out-fast 2.5s ease-out forwards",
+        "fade-out-fast": "fade-out-fast 3.5s ease-out forwards",
       },
     },
   },
