@@ -28,7 +28,7 @@ export default function HeroContent() {
   }, [])
 
   return (
-    <div className="relative z-10 flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 gap-4">
+    <div className="relative z-10 flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 gap-8">
       {/* Two Crossing Birds - Move across screen after initial load */}
       {showCrossingBirds && (
         <>

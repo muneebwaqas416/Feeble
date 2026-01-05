@@ -23,7 +23,7 @@ export default function Header() {
           </Link>
 
           {/* Navigation Links */}
-          <div className="hidden md:flex items-center gap-4">
+          <div className="hidden md:flex items-center gap-[28px]">
             <Link href="#how-it-works" className="text-nav-link text-base font-medium leading-none tracking-normal transition-colors hover:text-gray-900">
               How it Works
             </Link>
