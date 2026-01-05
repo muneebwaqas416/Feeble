@@ -280,9 +280,42 @@
 }
 
 /* Bird crossing animations - left to right and right to left */
+/* 
+ * HOW TO CONTROL THESE ANIMATIONS:
+ * 
+ * HORIZONTAL MOVEMENT (translateX):
+ * - Start position: calc(-134px - 20px) = bird width + padding (starts completely off-screen left)
+ * - End position: calc(100vw + 20px) = full viewport width + padding (ends completely off-screen right)
+ * - To adjust: Change the "20px" values to add more/less padding from screen edges
+ * - To make it start/end further: Increase the pixel values (e.g., -134px - 50px)
+ * 
+ * VERTICAL MOVEMENT (translateY):
+ * - Start: translateY(150px) = starts 150px DOWN from initial position
+ * - End: translateY(-150px) = ends 150px UP from initial position
+ * - Total vertical movement: 300px (150px down to 150px up)
+ * - To adjust: Change "150px" values:
+ *   - Increase (e.g., 200px) = more vertical movement
+ *   - Decrease (e.g., 100px) = less vertical movement
+ *   - Set to 0 = no vertical movement (horizontal only)
+ * 
+ * OPACITY FADE:
+ * - 0%: opacity 0 (invisible at start)
+ * - 10%: opacity 1 (fully visible after 10% of animation)
+ * - 90%: opacity 1 (stays visible until 90%)
+ * - 100%: opacity 0 (fades out at end)
+ * - To adjust: Change the percentage values (e.g., 5% and 95% for longer fade)
+ * 
+ * ANIMATION DURATION:
+ * - Controlled in HeroContent.tsx: animation: 'birdCrossLeftToRight 9s ease-in-out forwards'
+ * - Change "9s" to adjust speed (e.g., "6s" = faster, "12s" = slower)
+ * 
+ * EASING:
+ * - "ease-in-out" = starts slow, speeds up, slows down at end
+ * - Other options: "linear", "ease-in", "ease-out", "cubic-bezier(...)"
+ */
 @keyframes birdCrossLeftToRight {
   0% {
-    transform: translateX(-150%);
+    transform: translateX(calc(-100vw - 20px)) translateY(650px);
     opacity: 0;
   }
   10% {
@@ -292,14 +325,14 @@
     opacity: 1;
   }
   100% {
-    transform: translateX(calc(100vw + 150%));
+    transform: translateX(calc(100vw + 20px)) translateY(-50px);
     opacity: 0;
   }
 }
 
 @keyframes birdCrossRightToLeft {
   0% {
-    transform: translateX(calc(100vw + 150%));
+    transform: translateX(calc(150vw + 20px)) translateY(650px);
     opacity: 0;
   }
   10% {
@@ -309,7 +342,7 @@
     opacity: 1;
   }
   100% {
-    transform: translateX(-150%);
+    transform: translateX(calc(-100vw - 20px)) translateY(-50px);
     opacity: 0;
   }
 }

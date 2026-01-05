@@ -40,11 +40,11 @@ export default function HeroContent() {
             }}
           >
             <Image 
-              src="/assets/birds-leftmost.svg" 
+              src="/assets/left-to-right.svg" 
               alt="Bird crossing left to right" 
-              width={133} 
+              width={134} 
               height={74}
-              className="w-[80px] h-auto sm:w-[100px] md:w-[133px]"
+              className="w-[80px] h-auto sm:w-[100px] md:w-[134px]"
             />
           </div>
 
@@ -53,15 +53,14 @@ export default function HeroContent() {
             className="fixed top-[50%] pointer-events-none z-20 hidden sm:block"
             style={{
               animation: 'birdCrossRightToLeft 9s ease-in-out forwards',
-              transform: 'scaleX(-1)', // Flip horizontally for right-to-left
             }}
           >
             <Image 
-              src="/assets/birds-rightmost.svg" 
+              src="/assets/right-to-left.svg" 
               alt="Bird crossing right to left" 
-              width={133} 
+              width={134} 
               height={74}
-              className="w-[80px] h-auto sm:w-[100px] md:w-[133px]"
+              className="w-[80px] h-auto sm:w-[100px] md:w-[134px]"
             />
           </div>
         </>
