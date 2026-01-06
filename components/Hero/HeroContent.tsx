@@ -200,7 +200,8 @@ export default function HeroContent() {
 
         {/* Description */}
         <p className="text-[18px] font-normal leading-[130%] tracking-[-0.02em] text-center text-description-text">
-          Coup lets you, your team, or AI workflows send iMessages directly from your phone number, running securely on your Mac or Mac Mini.
+          Coup lets you, your team, or AI workflows send iMessages directly from<br />
+          your phone number, running securely on your Mac or Mac Mini.
         </p>
       </div>
       <div className="relative z-10 flex gap-[12px]">
