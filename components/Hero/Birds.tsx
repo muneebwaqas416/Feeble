@@ -4,7 +4,7 @@ import Image from "next/image"
 
 export default function Birds() {
   return (
-    <div className="absolute bottom-0 left-0 w-full h-full pointer-events-none z-10">
+    <div className="absolute bottom-0 left-0 w-full h-[400px] sm:h-[450px] md:h-[500px] lg:h-[550px] xl:h-[600px] 2xl:h-[650px] pointer-events-none z-10">
       {/* Bird 1: Leftmost - Responsive positioning and sizing */}
       <div className="absolute hidden sm:block" style={{ left: '19.37%', top: '55.68%' }}>
         <Image 

@@ -5,7 +5,7 @@ import Image from 'next/image'
 
 const Clouds = () => {
   return (
-    <div className="absolute bottom-0 left-0 w-full h-[1200px] sm:h-[1500px] md:h-[1800px] lg:h-[2000px] overflow-hidden pointer-events-none z-0">
+    <div className="absolute bottom-0 left-0 w-full h-[400px] sm:h-[500px] md:h-[550px] lg:h-[600px] xl:h-[650px] 2xl:h-[700px] overflow-hidden pointer-events-none z-0">
       {/* CONTAINER: Sticks everything to the bottom */}
       <div className="absolute opacity-10 bottom-0 left-0 w-full leading-[0]">
         

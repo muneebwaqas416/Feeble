@@ -8,7 +8,7 @@ import ScrollIndicator from "./ScrollIndicator"
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen bg-sky overflow-hidden">
+    <section className="relative min-h-screen bg-sky overflow-hidden" style={{ minHeight: '1080px' }}>
       {/* Initial Screen Overlay - Shows first, then fades out - Covers entire page */}
       <div 
         className="fixed inset-0 z-[100] pointer-events-none animate-fade-out-fast"
@@ -19,26 +19,29 @@ export default function Hero() {
       
       {/* Main Content Container - On top (z-50) */}
       <div 
-        className="relative z-50 left-1/2 -translate-x-1/2 w-full max-w-[1680px] px-[120px]"
+        className="relative 2xl:mb-[600px] lg:mb-[500px] xl:[550px] z-50 left-1/2 -translate-x-1/2 w-full max-w-[1680px] px-4 sm:px-8 md:px-16 lg:px-24 xl:px-[120px]"
         style={{
           paddingTop: '40px',
-          paddingBottom: '2rem',
         }}
       >
         <Header />
         <HeroContent />
       </div>
       
-      {/* Clouds, Birds, and Scroll Indicator Section - 2rem gap from content */}
-      <div className="relative  w-full" style={{ marginTop: '20rem', minHeight: '300px' }}>
-        {/* Clouds - Background layers starting from bottom (z-0) */}
-        <Clouds />
+      {/* Clouds, Birds, and Scroll Indicator Section - Positioned at bottom with 54px gap */}
+      <div className="absolute w-full" style={{ bottom: '0' }}>
+        {/* 54px spacer creates the gap between content and clouds */}
         
-        {/* Birds - Above clouds (z-10) */}
-        <Birds />
-        
-        {/* Scroll Indicator - Above clouds (z-10) */}
-        <ScrollIndicator />
+        <div className="relative h-[454px] sm:h-[554px] md:h-[604px] lg:h-[654px] xl:h-[704px] 2xl:h-[754px]">
+          {/* Clouds - Background layers starting from bottom (z-0) */}
+          <Clouds />
+          
+          {/* Birds - Above clouds (z-10) */}
+          <Birds />
+          
+          {/* Scroll Indicator - Above clouds (z-10) */}
+          <ScrollIndicator />
+        </div>
       </div>
     </section>
   )
