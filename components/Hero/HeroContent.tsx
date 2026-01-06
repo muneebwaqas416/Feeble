@@ -15,11 +15,10 @@ export default function HeroContent() {
       setShowContentBirds(true)
     }, 100)
 
-    // Start crossing birds after initial frame animation completes
-    // Initial animation: 800ms delay + 3500ms duration = 4300ms total
+    // Start crossing birds after 3 seconds of initial page load
     const crossingTimer = setTimeout(() => {
       setShowCrossingBirds(true)
-    }, 4300)
+    }, 3000)
 
     return () => {
       clearTimeout(contentTimer)
@@ -36,7 +35,7 @@ export default function HeroContent() {
           <div 
             className="fixed top-[30%] pointer-events-none z-20 hidden sm:block"
             style={{
-              animation: 'birdCrossLeftToRight 9s ease-in-out forwards',
+              animation: 'birdCrossLeftToRight 3.5s ease-in-out forwards',
             }}
           >
             <Image 
@@ -52,7 +51,7 @@ export default function HeroContent() {
           <div 
             className="fixed top-[50%] pointer-events-none z-20 hidden sm:block"
             style={{
-              animation: 'birdCrossRightToLeft 9s ease-in-out forwards',
+              animation: 'birdCrossRightToLeft 3.5s ease-in-out forwards',
             }}
           >
             <Image 
@@ -174,7 +173,7 @@ export default function HeroContent() {
         )}
       </div>
       
-      <div className="relative z-10 max-w-2xl mx-auto text-center flex flex-col gap-6">
+      <div className="relative z-10 max-w-2xl mx-auto text-center flex flex-col gap-6 mt-[64px]">
         {/* Feature Badge */}
         <div className="flex items-center justify-center">
           <div 
